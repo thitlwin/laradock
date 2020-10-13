@@ -586,7 +586,7 @@ ARG INSTALL_AST=false
 ARG AST_VERSION=1.0.3
 ENV AST_VERSION ${AST_VERSION}
 
-RUN if [ ${INSTALL_AST} = true ]; then \
+RUN if [ $[INSTALL_AST] = true ]; then \
     # AST extension requires PHP 7.0.0 or newer
     if [ $(php -r "echo PHP_MAJOR_VERSION;") != "5" ]; then \
         # Install AST extension
